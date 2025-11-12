@@ -2791,40 +2791,66 @@ border-radius: 0px;
 </style>
 
 <style>
-/* 整页统一深色背景 */
+/* ---------------------- */
+/* 整页深色背景 */
+/* ---------------------- */
 html, body {
     background-color: #0a0f14 !important;
     margin: 0;
     padding: 0;
 }
 
-/* 移除灰色大框背景 */
-.main-container, .container-fluid, .toc-content, .row, 
+/* 移除灰色框背景 */
+.main-container, .container-fluid, .toc-content, .row,
 .content, .col-xs-12, .col-sm-8, .col-md-9 {
     background: transparent !important;
     box-shadow: none !important;
 }
 
-/* 内容居中、固定宽度 */
+/* 内容居中 */
 .main-container {
     max-width: 900px !important;
     margin-left: auto !important;
     margin-right: auto !important;
 }
 
-/* 代码块样式：白色背景 */
-pre, code, .sourceCode {
-    background: #ffffff !important;
-    color: black !important;
-    border-radius: 6px;
-    padding: 12px !important;
-    overflow-x: auto;
+/* ---------------------- */
+/* 移除左侧线条 / TOC栏 */
+/* ---------------------- */
+#TOC, .tocify, .col-sm-4, .col-md-3 {
+    display: none !important;
 }
 
-/* 所有文本变白，提高对比度 */
+.col-sm-8, .col-md-9 {
+    width: 100% !important;
+}
+
+/* 移除横线 */
+hr, .section .header-section-number, .title-block:after {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* ---------------------- */
+/* 代码块美化与完整显示 */
+/* ---------------------- */
+pre, code, .sourceCode, pre.sourceCode {
+    white-space: pre-wrap !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    max-height: none !important;
+    line-height: 1.4 !important;
+    padding: 14px !important;
+    background: #ffffff !important;
+    color: #000 !important;
+    border-radius: 8px !important;
+}
+
+/* 所有文字白色，提高可读性 */
 h1, h2, h3, h4, h5, h6, p, li {
     color: #ffffff !important;
 }
+
 </style>
 
 
