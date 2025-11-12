@@ -2791,22 +2791,25 @@ border-radius: 0px;
 </style>
 
 <style>
+/* 整页背景图 */
 body {
     background: url("dada2.png") no-repeat center center fixed !important;
     background-size: cover !important;
 }
 
-/* 让整个教程区域透明一点（漂亮又专业）*/
-.main-container, 
-.toc-content, 
-.page-header, 
-section {
-    background: rgba(255, 255, 255, 0.85) !important;  
-    /* 0.85 = 85% 白色透明，你可以自己调 */
-    padding: 20px !important;
-    border-radius: 6px;
+/* 覆盖 rmarkdown/bootstrap 的暗色背景 */
+html, body, .main-container, .toc-content, .container-fluid, 
+.row, section, .tab-content, .content, .wrapper {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* 代码块保持白色框，提升可读性（可调）*/
+pre, code, .sourceCode {
+    background: rgba(255,255,255,0.9) !important;
 }
 </style>
+
 
 </head>
 
