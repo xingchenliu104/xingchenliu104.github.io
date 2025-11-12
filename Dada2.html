@@ -3,16 +3,73 @@
 <html>
 
 <head>
+<style>
+/* ======= 整页背景设置 ======= */
+body {
+    background: url('banner2.png') no-repeat center top fixed !important;
+    background-size: cover !important;
+    background-color: transparent !important;
+}
+
+/* ======= 让整个报告区透明 ======= */
+.main-container,
+.page-header,
+section,
+div,
+.tocify,
+.toc-content {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* ======= 删除 R Markdown 自动标题 ======= */
+h1.title {
+    display: none !important;
+}
+
+/* ======= 代码块透明化 ======= */
+pre, code {
+    background: rgba(0, 0, 0, 0.35) !important;
+    color: #f0f0f0 !important;
+    border-radius: 8px;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 12px !important;
+}
+
+/* ======= R 输出块（##） ======= */
+pre {
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+}
+
+/* ======= 表格透明化 ======= */
+table {
+    background: rgba(0, 0, 0, 0.3) !important;
+    color: white !important;
+}
+td, th {
+    border: 1px solid rgba(255,255,255,0.4) !important;
+}
+
+/* ======= 文本字体 ======= */
+body, p, h2, h3, h4 {
+    color: white !important;
+}
+
+/* ======= 报告区宽度优化 ======= */
+.main-container {
+    max-width: 1200px !important;
+    padding: 30px !important;
+}
+</style>
 
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Xingchen LIU" />
-
-
-<title>DADA2 Tuto</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
