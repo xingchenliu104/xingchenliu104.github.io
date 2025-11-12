@@ -2851,19 +2851,30 @@ h1, h2, h3, h4, h5, h6, p, li {
     color: #ffffff !important;
 }
   
-/* 彻底禁止任何容器裁剪代码内容 */
-.sourceCode, pre.sourceCode, .sourceCode > pre, .sourceCode > code,
+/* 去掉 R Markdown 为代码块生成的 panel 限制 */
 div.sourceCode {
-    max-height: none !important;
-    height: auto !important;
     overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
 }
 
-/* 禁止父级容器限制高度 */
-.panel, .panel-body, .well, .row, .content, .container-fluid {
+/* Bootstrap 自动包裹代码块的容器（最关键） */
+.panel, .panel-body, .well {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    background: transparent !important;  /* 去灰色大框 */
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* 某些模板会把代码块放进 pre > code > div */
+pre, pre code, pre.sourceCode {
     overflow: visible !important;
     max-height: none !important;
+    height: auto !important;
 }
+
 
 </style>
 
