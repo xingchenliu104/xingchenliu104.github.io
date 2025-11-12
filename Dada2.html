@@ -2874,6 +2874,22 @@ pre, pre code, pre.sourceCode {
     max-height: none !important;
     height: auto !important;
 }
+/* 完全隐藏左侧 TOC 区域及其列 */
+#TOC, .tocify, .col-sm-4, .col-md-3 {
+    display: none !important;
+}
+
+/* 让右侧内容占满整行（解决裁剪、错位、偏移问题） */
+.col-sm-8, .col-md-9, .col-xs-12 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+}
+
+/* 防止 Bootstrap 栅格造成水平裁剪 */
+.row {
+    display: block !important;
+}
 
 
 </style>
