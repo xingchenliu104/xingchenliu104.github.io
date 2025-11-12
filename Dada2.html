@@ -2791,24 +2791,42 @@ border-radius: 0px;
 </style>
 
 <style>
-/* 整页背景图 */
-body {
-    background: url("dada2.png") no-repeat center center fixed !important;
-    background-size: cover !important;
+/* 整页统一深色背景 */
+html, body {
+    background-color: #0a0f14 !important;
+    margin: 0;
+    padding: 0;
 }
 
-/* 覆盖 rmarkdown/bootstrap 的暗色背景 */
-html, body, .main-container, .toc-content, .container-fluid, 
-.row, section, .tab-content, .content, .wrapper {
+/* 移除灰色大框背景 */
+.main-container, .container-fluid, .toc-content, .row, 
+.content, .col-xs-12, .col-sm-8, .col-md-9 {
     background: transparent !important;
-    background-color: transparent !important;
+    box-shadow: none !important;
 }
 
-/* 代码块保持白色框，提升可读性（可调）*/
+/* 内容居中、固定宽度 */
+.main-container {
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* 代码块样式：白色背景 */
 pre, code, .sourceCode {
-    background: rgba(255,255,255,0.9) !important;
+    background: #ffffff !important;
+    color: black !important;
+    border-radius: 6px;
+    padding: 12px !important;
+    overflow-x: auto;
+}
+
+/* 所有文本变白，提高对比度 */
+h1, h2, h3, h4, h5, h6, p, li {
+    color: #ffffff !important;
 }
 </style>
+
 
 
 </head>
