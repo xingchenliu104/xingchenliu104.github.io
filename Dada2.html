@@ -2815,58 +2815,63 @@ pre.sourceCode, .sourceCode pre {
     height: auto !important;
 }
 
-/* ===== 1. 整体背景：深色 ===== */
+/* ===== 全局深色背景 ===== */
 html, body {
-  background-color: #0b141c;   /* 深蓝黑 */
+  background-color: #0b141c;
   margin: 0;
   padding: 0;
+  color: #e0e6ec !important;
 }
 
-/* 主内容居中 */
+/* ===== 隐藏 TOC / 页面居中 ===== */
+#TOC, .tocify,
+.col-sm-4, .col-md-3 {
+  display: none !important;
+}
+
 .container-fluid.main-container,
 .toc-content {
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* 隐藏左边 TOC */
-#TOC, .tocify,
-.col-sm-4, .col-md-3 {
-  display: none !important;
-}
-
-/* 右侧内容占满整行 */
 .col-xs-12, .col-sm-8, .col-md-9 {
   width: 100% !important;
-  max-width: 100% !important;
   float: none !important;
 }
 
-/* ===== 2. 代码框美化，文字可见 ===== */
-
-/* 外层代码框 */
-pre, pre.sourceCode, .sourceCode pre {
-  background: #1e2a36 !important;   /* 统一深灰蓝背景 */
-  color: #e8f6ff !important;         /* 亮字体，保证可见 */
-  border-radius: 10px;
-  padding: 14px 18px;
-  border: 1px solid rgba(255,255,255,0.2);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
-  overflow-x: auto;
+/* ===== 统一代码与输出块的背景（深灰蓝） ===== */
+pre, code, pre code,
+pre.sourceCode,
+.sourceCode pre,
+pre.output, pre.verbatim,
+.output pre {
+  background: #1e2a36 !important;
+  color: #c9eeff !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  padding: 14px 18px !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35) !important;
+  white-space: pre !important;
+  overflow-x: auto !important;
+  overflow-y: visible !important;
 }
 
-/* 代码内部字体颜色 */
-code, pre code, .sourceCode code {
-  color: #c9eeff !important;         /* 青白色，非常清晰 */
-  background: transparent !important;
+/* ===== 强制 R 输出（带 ## 的那些）变亮色 ===== */
+pre code span,
+pre.output,
+pre.verbatim,
+.output pre,
+pre:not(.sourceCode) {
+  color: #e8f6ff !important;
 }
 
-/* ===== 3. 标题文字颜色（亮色） ===== */
+/* ===== 标题颜色 ===== */
 h1, h2, h3, h4, h5 {
   color: #ffffff !important;
 }
 
-/* 正文颜色 */
+/* ===== 正文颜色 ===== */
 p, li {
   color: #e0e6ec !important;
   line-height: 1.6;
@@ -2875,19 +2880,6 @@ p, li {
 /* 去掉多余横线 */
 hr {
   border: none;
-  height: 0;
-}
-  
-/* ===== 修复 R 输出结果框（不是代码块！） ===== */
-pre:not(.sourceCode),
-pre.output, pre.verbatim, .output pre {
-  background: #1e2a36 !important;   /* 深灰蓝统一背景 */
-  color: #e8f6ff !important;         /* 亮字，清晰可见 */
-  border-radius: 10px !important;
-  border: 1px solid rgba(255,255,255,0.15) !important;
-  padding: 14px 18px !important;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.35) !important;
-  overflow-x: auto !important;
 }
 
 </style>
