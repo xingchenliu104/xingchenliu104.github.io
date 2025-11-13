@@ -2790,31 +2790,6 @@ border-radius: 0px;
 }
 
 
-/* 代码块：正常显示，不滚动，不裁剪，不重叠 */
-pre, .sourceCode, pre code, code {
-    white-space: pre !important;       /* 保持原样排版，防止 wrap 乱掉 */
-    overflow-x: auto !important;       /* 自动出现横向滚动，而不是挤出框 */
-    overflow-y: visible !important;    /* 允许高度扩展 */
-    display: block !important;
-    background-color: #1c2a36 !important;
-    color: #e6edf3 !important;
-    padding: 12px !important;
-    border-radius: 6px !important;
-}
-
-/* 让代码块自动增加高度，避免文本重叠 */
-pre.sourceCode, .sourceCode pre {
-    height: auto !important;
-    max-height: none !important;
-}
-
-/* 去掉会制造重叠的限制 */
-.sourceCode > pre {
-    white-space: pre !important;
-    overflow: visible !important;
-    height: auto !important;
-}
-
 /* ======== 全局白色主题 ======== */
 html, body {
   background: #ffffff !important;
@@ -2875,13 +2850,6 @@ p, li {
   color: #333333 !important;
   line-height: 1.6;
 }
-
-/* 移除深色主题遗留的横线样式 */
-hr {
-  border: 0;
-  border-top: 1px solid #cccccc;
-}
-
 
 </style>
 
