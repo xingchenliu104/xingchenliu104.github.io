@@ -2815,79 +2815,73 @@ pre.sourceCode, .sourceCode pre {
     height: auto !important;
 }
 
-/* 整体深色背景 */
+/* ===== 1. 整体背景：深色 ===== */
 html, body {
-    background-color: #0e1a22 !important;
-    margin: 0;
-    padding: 0;
+  background-color: #0b141c;   /* 深一点的蓝黑色 */
+  margin: 0;
+  padding: 0;
 }
 
-/* 让所有内容容器背景透明 */
-.container-fluid, .main-container, .row, .toc-content, section {
-    background: transparent !important;
-}
-
-
-/* --- 代码块样式（上白下灰） --- */
-
-pre.sourceCode, pre {
-    background: linear-gradient(to bottom, 
-        rgba(255,255,255,0.92) 0%, 
-        rgba(210,210,210,0.85) 100%
-    ) !important;
-    border-radius: 12px;
-    padding: 20px;
-    overflow-x: auto;
-    border: 1px solid rgba(255,255,255,0.12);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-}
-
-/* 让 code 文字保持正常 */
-code {
-    background: transparent !important;
-}
-
-/* 居中代码框 */
+/* 主内容居中，不要左边奇怪空白 */
+.container-fluid.main-container,
 .toc-content {
-    width: 100% !important;
-    max-width: 900px;
-    margin: auto !important;
-    float: none !important;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/* 删除左侧 TOC 对页面的影响 */
-#TOC, .tocify {
-    display: none !important;
-}
-
-/* 删除 Bootstrap 栅格烦人的左右布局 */
+/* 彻底干掉左边 TOC 那一列 */
+#TOC, .tocify,
 .col-sm-4, .col-md-3 {
-    display: none !important;
+  display: none !important;
 }
 
-.col-sm-8, .col-md-9, .col-xs-12 {
-    width: 100% !important;
-    max-width: 100% !important;
+/* 右侧内容占满整行 */
+.col-xs-12, .col-sm-8, .col-md-9 {
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
 }
 
-/* 修正中间那条长白线 */
+/* ===== 2. 代码框：上白下灰的渐变卡片 ===== */
+
+/* 外层代码框卡片 */
+pre, pre.sourceCode, .sourceCode pre {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,        /* 顶部白 */
+    #f0f0f0 40%,       /* 中间浅灰 */
+    #d0d0d0 100%       /* 底部深一点灰 */
+  );
+  color: #222222;
+  border-radius: 10px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+  overflow-x: auto;
+}
+
+/* 里面的 code 本身不要再带背景，否则会盖掉渐变 */
+code, pre code, .sourceCode code {
+  background: transparent !important;
+}
+
+/* ===== 3. 正文文字颜色 ===== */
+
+h1, h2, h3, h4, h5 {
+  color: #ffffff;
+}
+
+p, li {
+  color: #e0e6ec;
+  line-height: 1.6;
+}
+
+/* 删掉那条多余的横线 */
 hr {
-    border-color: rgba(255,255,255,0.1) !important;
+  border: none;
+  height: 0;
 }
 
-/* 滚动条美化（深色背景适配） */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #aaa;
-}
 </style>
 
 
