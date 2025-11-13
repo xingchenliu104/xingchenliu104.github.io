@@ -2788,9 +2788,7 @@ font-size: 0.90em;
 .tocify .list-group-item {
 border-radius: 0px;
 }
-</style>
 
-<style>
 /* ---------------------- */
 /* 整页深色背景 */
 /* ---------------------- */
@@ -2891,7 +2889,36 @@ pre, pre code, pre.sourceCode {
     display: block !important;
 }
 
+/* 让代码块完全显示内容（不截断，不滚动） */
+pre, code, pre code, .sourceCode, .sourceCode pre {
+    white-space: pre-wrap !important;
+    overflow-x: visible !important;
+    word-break: break-word !important;
+}
 
+/* 覆盖 rmarkdown 默认灰色背景 */
+pre, pre code, .sourceCode, .sourceCode pre {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* 去掉两边内边距造成的“被挤压”效果 */
+pre.sourceCode {
+    padding: 10px !important;
+}
+
+/* 彻底让右侧内容占满可见区域（真正的居中对齐） */
+.toc-content, .col-xs-12.col-sm-8.col-md-9 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin: 0 auto !important;
+}
+
+/* 强制去除左栏带来的宽度占用 */
+#TOC, .tocify, .col-sm-4, .col-md-3 {
+    display: none !important;
+}
+  
 </style>
 
 
