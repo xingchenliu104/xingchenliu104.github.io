@@ -2791,10 +2791,10 @@ border-radius: 0px;
 
 body {
   background-image: url("dada2.jpeg");
-  background-repeat: repeat-x;         /* 只横向平铺 */
-  background-attachment: fixed;        /* 背景固定不动 */
-  background-size: auto;               /* 不缩放、不拉伸 */
-  background-position: top center;     /* 通常希望图片贴在顶部 */
+  background-repeat: repeat-y;    /* 垂直方向一直平铺下去 */
+  background-size: auto;          /* 不拉伸 */
+  background-position: center top;
+  background-attachment: scroll;  /* 跟随页面一起延伸 */
 }
 html::before {
   content: "";
