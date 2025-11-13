@@ -2877,7 +2877,18 @@ hr {
   border: none;
   height: 0;
 }
-
+  
+/* ===== 修复 R 输出结果框（不是代码块！） ===== */
+pre:not(.sourceCode),
+pre.output, pre.verbatim, .output pre {
+  background: #1e2a36 !important;   /* 深灰蓝统一背景 */
+  color: #e8f6ff !important;         /* 亮字，清晰可见 */
+  border-radius: 10px !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  padding: 14px 18px !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35) !important;
+  overflow-x: auto !important;
+}
 
 </style>
 
