@@ -2796,13 +2796,13 @@ body {
   background-size: auto;               /* 不缩放、不拉伸 */
   background-position: top center;     /* 通常希望图片贴在顶部 */
 }
-body::before {
+html::before {
   content: "";
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255, 255, 255, 0.75);   /* 0.75 可调整透明度 */
-  pointer-events: none;                   /* 不阻挡鼠标操作 */
-  z-index: -1;                            /* 放在最下面 */
+  background: rgba(255,255,255,0.78);
+  z-index: -1;              /* 固定在背景层 */
+  pointer-events: none;
 }
 
 
