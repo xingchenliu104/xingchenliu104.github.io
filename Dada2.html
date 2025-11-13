@@ -2817,19 +2817,19 @@ pre.sourceCode, .sourceCode pre {
 
 /* ===== 1. 整体背景：深色 ===== */
 html, body {
-  background-color: #0b141c;   /* 深一点的蓝黑色 */
+  background-color: #0b141c;   /* 深蓝黑 */
   margin: 0;
   padding: 0;
 }
 
-/* 主内容居中，不要左边奇怪空白 */
+/* 主内容居中 */
 .container-fluid.main-container,
 .toc-content {
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* 彻底干掉左边 TOC 那一列 */
+/* 隐藏左边 TOC */
 #TOC, .tocify,
 .col-sm-4, .col-md-3 {
   display: none !important;
@@ -2842,45 +2842,42 @@ html, body {
   float: none !important;
 }
 
-/* ===== 2. 代码框：上白下灰的渐变卡片 ===== */
+/* ===== 2. 代码框美化，文字可见 ===== */
 
-/* 外层代码框卡片 */
+/* 外层代码框 */
 pre, pre.sourceCode, .sourceCode pre {
-  background: linear-gradient(
-    to bottom,
-    #ffffff 0%,        /* 顶部白 */
-    #f0f0f0 40%,       /* 中间浅灰 */
-    #d0d0d0 100%       /* 底部深一点灰 */
-  );
-  color: #222222;
+  background: #1e2a36 !important;   /* 统一深灰蓝背景 */
+  color: #e8f6ff !important;         /* 亮字体，保证可见 */
   border-radius: 10px;
   padding: 14px 18px;
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.2);
   box-shadow: 0 4px 10px rgba(0,0,0,0.35);
   overflow-x: auto;
 }
 
-/* 里面的 code 本身不要再带背景，否则会盖掉渐变 */
+/* 代码内部字体颜色 */
 code, pre code, .sourceCode code {
+  color: #c9eeff !important;         /* 青白色，非常清晰 */
   background: transparent !important;
 }
 
-/* ===== 3. 正文文字颜色 ===== */
-
+/* ===== 3. 标题文字颜色（亮色） ===== */
 h1, h2, h3, h4, h5 {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
+/* 正文颜色 */
 p, li {
-  color: #e0e6ec;
+  color: #e0e6ec !important;
   line-height: 1.6;
 }
 
-/* 删掉那条多余的横线 */
+/* 去掉多余横线 */
 hr {
   border: none;
   height: 0;
 }
+
 
 </style>
 
