@@ -2815,15 +2815,15 @@ pre.sourceCode, .sourceCode pre {
     height: auto !important;
 }
 
-/* ===== 全局深色背景 ===== */
+/* ======== 全局白色主题 ======== */
 html, body {
-  background-color: #0b141c;
+  background: #ffffff !important;
+  color: #333333 !important;
   margin: 0;
   padding: 0;
-  color: #e0e6ec !important;
 }
 
-/* ===== 隐藏 TOC / 页面居中 ===== */
+/* ======== 隐藏侧栏 TOC（如需可删） ======== */
 #TOC, .tocify,
 .col-sm-4, .col-md-3 {
   display: none !important;
@@ -2840,47 +2840,48 @@ html, body {
   float: none !important;
 }
 
-/* ===== 统一代码与输出块的背景（深灰蓝） ===== */
-pre, code, pre code,
+/* ======== 代码块（输入 & 输出） ======== */
+pre,
 pre.sourceCode,
 .sourceCode pre,
-pre.output, pre.verbatim,
-.output pre {
-  background: #1e2a36 !important;
-  color: #c9eeff !important;
-  border-radius: 10px !important;
-  border: 1px solid rgba(255,255,255,0.15) !important;
-  padding: 14px 18px !important;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.35) !important;
-  white-space: pre !important;
-  overflow-x: auto !important;
-  overflow-y: visible !important;
-}
-
-/* ===== 强制 R 输出（带 ## 的那些）变亮色 ===== */
-pre code span,
 pre.output,
 pre.verbatim,
 .output pre,
 pre:not(.sourceCode) {
-  color: #e8f6ff !important;
+  background: #f5f5f5 !important;   /* 浅灰背景，阅读最佳 */
+  color: #222222 !important;        /* 深灰字体，高对比度 */
+  border: 1px solid #dddddd !important;
+  border-radius: 6px !important;
+  padding: 12px 16px !important;
+  white-space: pre !important;
+  overflow-x: auto !important;      /* 防止溢出重叠 */
+  overflow-y: visible !important;
+  font-size: 14px !important;
 }
 
-/* ===== 标题颜色 ===== */
+/* ======== 代码中的高亮部分（确保可见） ======== */
+code, pre code, .sourceCode code {
+  background: transparent !important;
+  color: #111111 !important;
+}
+
+/* ======== 标题颜色 ======== */
 h1, h2, h3, h4, h5 {
-  color: #ffffff !important;
+  color: #111111 !important;
 }
 
-/* ===== 正文颜色 ===== */
+/* ======== 正文 ======== */
 p, li {
-  color: #e0e6ec !important;
+  color: #333333 !important;
   line-height: 1.6;
 }
 
-/* 去掉多余横线 */
+/* 移除深色主题遗留的横线样式 */
 hr {
-  border: none;
+  border: 0;
+  border-top: 1px solid #cccccc;
 }
+
 
 </style>
 
