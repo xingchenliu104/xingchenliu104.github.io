@@ -2815,63 +2815,79 @@ pre.sourceCode, .sourceCode pre {
     height: auto !important;
 }
 
-/* ===========================
-   1. 去掉左边 TOC 栏的空间
-   =========================== */
-.col-xs-12.col-sm-4.col-md-3,
-#TOC,
-.tocify {
-    display: none !important;
-    width: 0 !important;
-    max-width: 0 !important;
+/* 整体深色背景 */
+html, body {
+    background-color: #0e1a22 !important;
+    margin: 0;
+    padding: 0;
 }
 
-/* 让右侧真正占满全屏宽度并居中 */
-.toc-content,
-.col-xs-12.col-sm-8.col-md-9 {
+/* 让所有内容容器背景透明 */
+.container-fluid, .main-container, .row, .toc-content, section {
+    background: transparent !important;
+}
+
+
+/* --- 代码块样式（上白下灰） --- */
+
+pre.sourceCode, pre {
+    background: linear-gradient(to bottom, 
+        rgba(255,255,255,0.92) 0%, 
+        rgba(210,210,210,0.85) 100%
+    ) !important;
+    border-radius: 12px;
+    padding: 20px;
+    overflow-x: auto;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+/* 让 code 文字保持正常 */
+code {
+    background: transparent !important;
+}
+
+/* 居中代码框 */
+.toc-content {
     width: 100% !important;
-    max-width: 1100px !important;
-    margin: 0 auto !important;
+    max-width: 900px;
+    margin: auto !important;
     float: none !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
 }
 
-/* ===========================
-   2. 去掉左侧诡异的“细线”
-   =========================== */
-hr {
-    border: none !important;
-    background: none !important;
+/* 删除左侧 TOC 对页面的影响 */
+#TOC, .tocify {
+    display: none !important;
 }
 
-/* ===========================
-   3. 优化代码块视觉（更亮、更清爽、更专业）
-   =========================== */
-pre, code, pre code, .sourceCode, .sourceCode pre {
-    background-color: #1f2d3a !important;   /* 调亮一点 */
-    color: #e8edf2 !important;
-    padding: 14px !important;
-    border-radius: 8px !important;
-    margin: 20px auto !important;
-    max-width: 1000px !important;            /* 不要太宽，阅读更舒服 */
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);     /* 轻微阴影，让它浮起来 */
+/* 删除 Bootstrap 栅格烦人的左右布局 */
+.col-sm-4, .col-md-3 {
+    display: none !important;
 }
 
-/* ===========================
-   4. 让整个内容整体更居中 + 美观
-   =========================== */
-.main-container, .container-fluid {
-    max-width: 1100px !important;
-    margin: 0 auto !important;
-}
-
-.row {
-    margin: 0 !important;
-    padding: 0 !important;
+.col-sm-8, .col-md-9, .col-xs-12 {
     width: 100% !important;
+    max-width: 100% !important;
 }
 
+/* 修正中间那条长白线 */
+hr {
+    border-color: rgba(255,255,255,0.1) !important;
+}
+
+/* 滚动条美化（深色背景适配） */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
 </style>
 
 
