@@ -70,8 +70,21 @@ pre:not([class]) { background-color: white }
 
 /* 新增：背景和美化 */
 body {
-  background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);
+  background-image: url('https://images.unsplash.com/photo-1511497584788-876760111969?w=1600&q=80');
+  background-size: cover;
   background-attachment: fixed;
+  background-color: #f0f0f0;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: -1;
 }
 
 #header {
@@ -112,6 +125,29 @@ body {
   margin-bottom: 20px;
   line-height: 1.8;
 }
+
+h1.title {
+  font-size: 38px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+h4.author {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 15px 0;
+  letter-spacing: 1px;
+}
+
+h4.date {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 15px 0;
+  letter-spacing: 1px;
+}
+
+
 </style>
 <script>
 
@@ -396,19 +432,20 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Tropical River</h1>
+<h1 class="title toc-ignore">Tropical River Dada2 - CC2</h1>
 <h4 class="author">Xingchen LIU</h4>
-<h4 class="date">2026-01-07</h4>
+<h4 class="date">Université de Bretagne Occidentale (UBO) · Master MFA</h4>
 
 </div>
 
 
-<p>Référence de l’article</p>
+
 <p>Li et al., Bacterial Community Composition and Function of Tropical
 River Ecosystem along the Nandu River on Hainan Island, China,
 International Journal of Environmental Research and Public Health,
 2023</p>
-<p>Introduction Les écosystèmes fluviaux tropicaux sont soumis depuis
+<p style="font-size: 1.5em; font-weight: bold; color: #1a472a; margin-top: 40px; margin-bottom: 20px;">Introduction</p>
+<p>Les écosystèmes fluviaux tropicaux sont soumis depuis
 longtemps à de fortes pressions liées aux activités humaines, telles que
 l’urbanisation, les pratiques agricoles et les apports de polluants. Ces
 pressions peuvent entraîner des modifications de la composition des
@@ -430,7 +467,7 @@ exercent une influence significative sur la structure des communautés
 bactériennes ? 3.Quelles fonctions écologiques potentielles les
 communautés bactériennes de la rivière Nandu et du réservoir de Songtao
 sont-elles susceptibles d’assurer ?</p>
-<p>Matériels et Méthodes</p>
+<p style="font-size: 1.5em; font-weight: bold; color: #1a472a; margin-top: 40px; margin-bottom: 20px;">Matériels et Méthodes</p>
 <p>Les échantillons d’eau ont été collectés en novembre 2021 sur un
 total de 14 sites, comprenant l’amont (U1–U3), le cours moyen (M1–M4),
 l’aval (L1–L4) de la rivière Nandu, ainsi que le réservoir de Songtao
@@ -1186,7 +1223,7 @@ profils génériques relativement similaires, tandis que le groupe Upper
 se distingue par une composition plus spécifique. Les échantillons du
 réservoir forment également un ensemble distinct par rapport aux sites
 fluviaux.</p>
-<p>Discussion</p>
+<p style="font-size: 1.5em; font-weight: bold; color: #1a472a; margin-top: 40px; margin-bottom: 20px;">Discussion</p>
 <p>Cette étude, fondée sur le séquençage à haut débit du gène 16S rRNA,
 met en évidence des variations marquées de la diversité et de la
 structure des communautés bactériennes le long du continuum
