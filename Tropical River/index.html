@@ -66,7 +66,53 @@ h4 {font-size: 18px;}
 h5 {font-size: 16px;}
 h6 {font-size: 12px;}
 code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-pre:not([class]) { background-color: white }</style>
+pre:not([class]) { background-color: white }
+
+/* 新增：背景和美化 */
+body {
+  background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);
+  background-attachment: fixed;
+}
+
+#header {
+  background-color: rgba(26, 71, 42, 0.95);
+  color: white;
+  padding: 60px 20px;
+  margin-bottom: 40px;
+  text-align: center;
+  border-bottom: 4px solid #4a9d6f;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  letter-spacing: 2px;
+}
+
+.author, .date {
+  color: #b0d9c4;
+}
+
+.main-container p:first-of-type {
+  background-color: #fff9e6;
+  border-left: 5px solid #4a9d6f;
+  padding: 20px;
+  margin: 30px 20px;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #1a472a;
+  border-radius: 4px;
+}
+
+.main-container {
+  background-color: white;
+  padding: 20px;
+}
+
+.main-container p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+</style>
 <script>
 
 /**
