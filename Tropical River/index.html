@@ -58,96 +58,91 @@ if (!!window.navigator.userAgent.match("MSIE 8")) {
 !function(a){"use strict";a.matchMedia=a.matchMedia||function(a){var b,c=a.documentElement,d=c.firstElementChild||c.firstChild,e=a.createElement("body"),f=a.createElement("div");return f.id="mq-test-1",f.style.cssText="position:absolute;top:-100em",e.style.background="none",e.appendChild(f),function(a){return f.innerHTML='&shy;<style media="'+a+'"> #mq-test-1 { width: 42px; }</style>',c.insertBefore(e,d),b=42===f.offsetWidth,c.removeChild(e),{matches:b,media:a}}}(a.document)}(this),function(a){"use strict";function b(){u(!0)}var c={};a.respond=c,c.update=function(){};var d=[],e=function(){var b=!1;try{b=new a.XMLHttpRequest}catch(c){b=new a.ActiveXObject("Microsoft.XMLHTTP")}return function(){return b}}(),f=function(a,b){var c=e();c&&(c.open("GET",a,!0),c.onreadystatechange=function(){4!==c.readyState||200!==c.status&&304!==c.status||b(c.responseText)},4!==c.readyState&&c.send(null))};if(c.ajax=f,c.queue=d,c.regex={media:/@media[^\{]+\{([^\{\}]*\{[^\}\{]*\})+/gi,keyframes:/@(?:\-(?:o|moz|webkit)\-)?keyframes[^\{]+\{(?:[^\{\}]*\{[^\}\{]*\})+[^\}]*\}/gi,urls:/(url\()['"]?([^\/\)'"][^:\)'"]+)['"]?(\))/g,findStyles:/@media *([^\{]+)\{([\S\s]+?)$/,only:/(only\s+)?([a-zA-Z]+)\s?/,minw:/\([\s]*min\-width\s*:[\s]*([\s]*[0-9\.]+)(px|em)[\s]*\)/,maxw:/\([\s]*max\-width\s*:[\s]*([\s]*[0-9\.]+)(px|em)[\s]*\)/},c.mediaQueriesSupported=a.matchMedia&&null!==a.matchMedia("only all")&&a.matchMedia("only all").matches,!c.mediaQueriesSupported){var g,h,i,j=a.document,k=j.documentElement,l=[],m=[],n=[],o={},p=30,q=j.getElementsByTagName("head")[0]||k,r=j.getElementsByTagName("base")[0],s=q.getElementsByTagName("link"),t=function(){var a,b=j.createElement("div"),c=j.body,d=k.style.fontSize,e=c&&c.style.fontSize,f=!1;return b.style.cssText="position:absolute;font-size:1em;width:1em",c||(c=f=j.createElement("body"),c.style.background="none"),k.style.fontSize="100%",c.style.fontSize="100%",c.appendChild(b),f&&k.insertBefore(c,k.firstChild),a=b.offsetWidth,f?k.removeChild(c):c.removeChild(b),k.style.fontSize=d,e&&(c.style.fontSize=e),a=i=parseFloat(a)},u=function(b){var c="clientWidth",d=k[c],e="CSS1Compat"===j.compatMode&&d||j.body[c]||d,f={},o=s[s.length-1],r=(new Date).getTime();if(b&&g&&p>r-g)return a.clearTimeout(h),h=a.setTimeout(u,p),void 0;g=r;for(var v in l)if(l.hasOwnProperty(v)){var w=l[v],x=w.minw,y=w.maxw,z=null===x,A=null===y,B="em";x&&(x=parseFloat(x)*(x.indexOf(B)>-1?i||t():1)),y&&(y=parseFloat(y)*(y.indexOf(B)>-1?i||t():1)),w.hasquery&&(z&&A||!(z||e>=x)||!(A||y>=e))||(f[w.media]||(f[w.media]=[]),f[w.media].push(m[w.rules]))}for(var C in n)n.hasOwnProperty(C)&&n[C]&&n[C].parentNode===q&&q.removeChild(n[C]);n.length=0;for(var D in f)if(f.hasOwnProperty(D)){var E=j.createElement("style"),F=f[D].join("\n");E.type="text/css",E.media=D,q.insertBefore(E,o.nextSibling),E.styleSheet?E.styleSheet.cssText=F:E.appendChild(j.createTextNode(F)),n.push(E)}},v=function(a,b,d){var e=a.replace(c.regex.keyframes,"").match(c.regex.media),f=e&&e.length||0;b=b.substring(0,b.lastIndexOf("/"));var g=function(a){return a.replace(c.regex.urls,"$1"+b+"$2$3")},h=!f&&d;b.length&&(b+="/"),h&&(f=1);for(var i=0;f>i;i++){var j,k,n,o;h?(j=d,m.push(g(a))):(j=e[i].match(c.regex.findStyles)&&RegExp.$1,m.push(RegExp.$2&&g(RegExp.$2))),n=j.split(","),o=n.length;for(var p=0;o>p;p++)k=n[p],l.push({media:k.split("(")[0].match(c.regex.only)&&RegExp.$2||"all",rules:m.length-1,hasquery:k.indexOf("(")>-1,minw:k.match(c.regex.minw)&&parseFloat(RegExp.$1)+(RegExp.$2||""),maxw:k.match(c.regex.maxw)&&parseFloat(RegExp.$1)+(RegExp.$2||"")})}u()},w=function(){if(d.length){var b=d.shift();f(b.href,function(c){v(c,b.href,b.media),o[b.href]=!0,a.setTimeout(function(){w()},0)})}},x=function(){for(var b=0;b<s.length;b++){var c=s[b],e=c.href,f=c.media,g=c.rel&&"stylesheet"===c.rel.toLowerCase();e&&g&&!o[e]&&(c.styleSheet&&c.styleSheet.rawCssText?(v(c.styleSheet.rawCssText,e,f),o[e]=!0):(!/^([a-zA-Z:]*\/\/)/.test(e)&&!r||e.replace(RegExp.$1,"").split("/")[0]===a.location.host)&&("//"===e.substring(0,2)&&(e=a.location.protocol+e),d.push({href:e,media:f})))}w()};x(),c.update=x,c.getEmValue=t,a.addEventListener?a.addEventListener("resize",b,!1):a.attachEvent&&a.attachEvent("onresize",b)}}(this);
 };
 </script>
-<style>h1 {font-size: 34px;}
-h1.title {font-size: 38px;}
-h2 {font-size: 30px;}
-h3 {font-size: 24px;}
-h4 {font-size: 18px;}
-h5 {font-size: 16px;}
-h6 {font-size: 12px;}
-code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-pre:not([class]) { background-color: white }
-
-/* 新增：背景和美化 */
-body {
-  background-image: url('https://images.unsplash.com/photo-1511497584788-876760111969?w=1600&q=80');
-  background-size: cover;
-  background-attachment: fixed;
-  background-color: #f0f0f0;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.85);
-  z-index: -1;
-}
-
-#header {
-  background-color: rgba(26, 71, 42, 0.95);
-  color: white;
-  padding: 60px 20px;
-  margin-bottom: 40px;
-  text-align: center;
-  border-bottom: 4px solid #4a9d6f;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.title {
-  letter-spacing: 2px;
-}
-
-.author, .date {
-  color: #b0d9c4;
-}
-
-.main-container p:first-of-type {
-  background-color: #fff9e6;
-  border-left: 5px solid #4a9d6f;
-  padding: 20px;
-  margin: 30px 20px;
-  font-size: 1.1em;
-  font-weight: 500;
-  color: #1a472a;
-  border-radius: 4px;
-}
-
-.main-container {
-  background-color: white;
-  padding: 20px;
-}
-
-.main-container p {
-  margin-bottom: 20px;
-  line-height: 1.8;
-}
-
+<style>
+h1 {font-size: 34px;}
 h1.title {
   font-size: 38px;
   font-weight: bold;
   letter-spacing: 3px;
   margin-bottom: 20px;
 }
-
-h4.author {
-  font-weight: bold;
+h2 {font-size: 30px;}
+h3 {font-size: 24px;}
+h4 {
   font-size: 18px;
-  margin: 15px 0;
-  letter-spacing: 1px;
-}
-
-h4.date {
   font-weight: bold;
-  font-size: 16px;
   margin: 15px 0;
   letter-spacing: 1px;
 }
+h5 {font-size: 16px;}
+h6 {font-size: 12px;}
+code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+pre:not([class]) { background-color: white }
 
+/* 深蓝色背景 */
+body {
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 50%, #0f3460 100%);
+  background-attachment: fixed;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
 
+/* 头部深蓝色 */
+#header {
+  background-color: #0f3460;
+  color: white;
+  padding: 60px 20px;
+  margin-bottom: 40px;
+  text-align: center;
+  border-bottom: 4px solid #00d4ff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#header h1 {
+  color: white;
+}
+
+#header h4 {
+  color: #a8d8ea;
+}
+
+/* 主容器白色 */
+.main-container {
+  background-color: white;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 参考文章部分 - 浅蓝背景 */
+.main-container p:first-of-type {
+  background-color: #e3f2fd;
+  border-left: 5px solid #0f3460;
+  padding: 20px;
+  margin: 30px 0;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #0f3460;
+  border-radius: 4px;
+}
+
+/* 普通段落 */
+.main-container p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* 链接颜色 */
+a {
+  color: #0f3460;
+}
+
+a:hover {
+  color: #00d4ff;
+}
 </style>
 <script>
 
@@ -444,7 +439,7 @@ display: none;
 River Ecosystem along the Nandu River on Hainan Island, China,
 International Journal of Environmental Research and Public Health,
 2023</p>
-<p style="font-size: 1.5em; font-weight: bold; color: #1a472a; margin-top: 40px; margin-bottom: 20px;">Introduction</p>
+<p style="font-size: 1.5em; font-weight: bold; color: #0f3460; margin-top: 40px; margin-bottom: 20px;">Introduction</p>
 <p>Les écosystèmes fluviaux tropicaux sont soumis depuis
 longtemps à de fortes pressions liées aux activités humaines, telles que
 l’urbanisation, les pratiques agricoles et les apports de polluants. Ces
@@ -467,7 +462,7 @@ exercent une influence significative sur la structure des communautés
 bactériennes ? 3.Quelles fonctions écologiques potentielles les
 communautés bactériennes de la rivière Nandu et du réservoir de Songtao
 sont-elles susceptibles d’assurer ?</p>
-<p style="font-size: 1.5em; font-weight: bold; color: #1a472a; margin-top: 40px; margin-bottom: 20px;">Matériels et Méthodes</p>
+<p style="font-size: 1.5em; font-weight: bold; color: #0f3460; margin-top: 40px; margin-bottom: 20px;">Matériels et Méthodes</p>
 <p>Les échantillons d’eau ont été collectés en novembre 2021 sur un
 total de 14 sites, comprenant l’amont (U1–U3), le cours moyen (M1–M4),
 l’aval (L1–L4) de la rivière Nandu, ainsi que le réservoir de Songtao
@@ -1223,7 +1218,7 @@ profils génériques relativement similaires, tandis que le groupe Upper
 se distingue par une composition plus spécifique. Les échantillons du
 réservoir forment également un ensemble distinct par rapport aux sites
 fluviaux.</p>
-<p style="font-size: 1.5em; font-weight: bold; color: #1a472a; margin-top: 40px; margin-bottom: 20px;">Discussion</p>
+<p style="font-size: 1.5em; font-weight: bold; color: #0f3460; margin-top: 40px; margin-bottom: 20px;">Discussion</p>
 <p>Cette étude, fondée sur le séquençage à haut débit du gène 16S rRNA,
 met en évidence des variations marquées de la diversité et de la
 structure des communautés bactériennes le long du continuum
